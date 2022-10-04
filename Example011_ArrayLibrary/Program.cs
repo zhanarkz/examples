@@ -1,47 +1,47 @@
 ﻿// new int [] - create new massive where N elements
 // void FillArray - метод заполнения массива
 // void PrintArray - метод выведения на экран массива
-void FillArray(int [] collection)
+void FillArray(int[] collection)
 {
     int length = collection.Length;
     int index = 0;
     while (index < length)
     {
-        collection[index] = new Random().Next(1, 15);
+        collection[index] = new Random().Next(1, 10);
         //index = index +1; 
         index++;
     }
 }
 
-void PrintArray(int [] col)
+void PrintArray(int[] col)
 {
     int count = col.Length;
     int position = 0;
     while (position < count)
     {
-        Console.WriteLine(col[ position ]);
-        position++ ;
+        Console.WriteLine(col[position]);
+        position++;
     }
 }
 
-int Indexof(int [] collection, int find)
+int Indexof(int[] collection, int find)
 {
     int count = collection.Length;
     int index = 0;
-    int position = 0;
+    int position = -1;
     while (index < count)
     {
         if (collection[index] == find)
-    {
-        position = index;
-        break;
-    }
-    index++;
+        {
+            position = index;
+            break;
+        }
+        index++;
     }
     return position;
 }
 
-int [] array = new int [10];
+int[] array = new int[10];
 
 FillArray(array);
 array[5] = 5;
@@ -50,5 +50,5 @@ array[9] = 5;
 PrintArray(array);
 Console.WriteLine();
 
-int pos = Indexof(array, 5);
+int pos = Indexof(array, 25);
 Console.WriteLine(pos);
